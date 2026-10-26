@@ -1,0 +1,25 @@
+{
+  "name": "crm-productor-seguros",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "workspaces": ["apps/*"],
+  "scripts": {
+    "dev": "npm run dev --workspace @crm/web",
+    "dev:api": "npm run dev --workspace @crm/api",
+    "start:api": "npm run start --workspace @crm/api",
+    "build:api": "npm run build --workspace @crm/api",
+    "typecheck:api": "npm run typecheck --workspace @crm/api",
+    "test:api": "npm test --workspace @crm/api",
+    "build": "npm run build --workspace @crm/web && npm run build --workspace @crm/api",
+    "typecheck": "npm run typecheck --workspace @crm/web && npm run typecheck --workspace @crm/api",
+    "lint": "npm run lint --workspace @crm/web && npm run lint --workspace @crm/api",
+    "preview": "npm run preview --workspace @crm/web",
+    "verify": "npm run test:api && npm run typecheck && npm run lint && npm run build"
+  },
+  "devDependencies": {
+    "eslint": "^9.36.0",
+    "typescript-eslint": "^8.44.0"
+  },
+  "engines": { "node": ">=20.19.0" }
+}
